@@ -1,0 +1,9 @@
+---
+# tasks file for ansible-role-demo
+- name: echo msg
+  shell: date | xargs echo '{{echo_msg}}'
+  register: echo_output
+
+- name: output
+  shell: "echo {{echo_output}}>>/tmp/{{touch_file}}"
+  notify: file output ok

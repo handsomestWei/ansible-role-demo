@@ -1,0 +1,4 @@
+---
+# handlers file for ansible-role-demo
+- name: file output ok
+  shell: "echo 'ok'>>/tmp/{{touch_file}}"
