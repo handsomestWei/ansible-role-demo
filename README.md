@@ -7,17 +7,6 @@ sudo yum install -y epel-release
 sudo yum install -y ansible
 ```
 
-## 体验
-使用简短指令ad hoc
-```
-ansible all -m command -a "echo Hello World"
-```
-
-## 初始化role
-```
-ansible-galaxy init [role name]
-```
-
 ## 运行role demo
 ### 配置hosts
 添加一个local
@@ -32,6 +21,12 @@ hosts: local
     - role: ansible-role-demo
 ```
 
+### 下载安装
+[下载地址](https://galaxy.ansible.com/handsomestwei/ansible_role_demo)
+```
+ansible-galaxy install handsomestwei.ansible_role_demo
+```
+
 ### 运行剧本
 ```
 ansible-playbook ansible-role-demo.yaml
@@ -43,8 +38,19 @@ ansible-playbook ansible-role-demo.yaml
 cat /tmp/ansible-output
 ```
 
-## 外部role安装
-### 整理依赖 
+## 其他
+### 简短指令ad hoc
+```
+ansible all -m command -a "echo Hello World"
+```
+
+### 初始化role
+```
+ansible-galaxy init [role name]
+```
+
+### 外部role安装
+#### 整理依赖 
 requirements.yml
 ```
 - src: git@github.com:handsomestWei/ansible-role-demo.git
@@ -52,7 +58,7 @@ requirements.yml
   version: master
   name: ansible-role-demo
 ```
-### 安装
+#### 安装
 通常安装到用户的~/.ansible/roles目录
 ```
 ansible-galaxy install -r roles/requirements.yml -p ./
