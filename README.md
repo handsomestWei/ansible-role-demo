@@ -49,7 +49,7 @@ requirements.yml
 ```
 - src: git@github.com:handsomestWei/ansible-role-demo.git
   scm: git
-  version: main
+  version: master
   name: ansible-role-demo
 ```
 ### 安装
